@@ -53,6 +53,9 @@ def add_task(user_id, task):
     c = conn.cursor()
     c.execute("INSERT INTO tasks (user_id, task, done) VALUES (?, ?, ?)",
               (user_id, task, False))
+    if not c.fetchone():  # Add only if not duplicate
+        c.execute("INSERT INTO tasks (user_id, task, done) VALUES (?, ?, ?)",
+                  (user_id, task, False))
     conn.commit()
     conn.close()
 
