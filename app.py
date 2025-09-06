@@ -113,7 +113,7 @@ if st.session_state.user is None:
             if user:
                 st.session_state.user = {"id": user[0], "username": user[1]}
                 st.success(f"Welcome back, {username}!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid username or password")
 
