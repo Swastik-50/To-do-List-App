@@ -143,6 +143,7 @@ else:
         if new_task.strip() != "":
             add_task(st.session_state.user["id"], new_task)
             st.success(f"Task '{new_task}' added!")
+            st.session_state.new_task = ""
             st.rerun()
         else:
             st.warning("Please enter a task before adding.")
