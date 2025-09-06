@@ -144,12 +144,12 @@ else:
     new_task = st.text_input("Add a new task")
     if st.button("➕ Add Task"):
         if st.session_state.new_task.strip() != "":
-        add_task(st.session_state.user["id"], st.session_state.new_task)
-        st.success(f"Task '{st.session_state.new_task}' added!")
-        st.session_state.new_task = ""  # ✅ Clears input box after adding
-        st.rerun()
-    else:
-        st.warning("Please enter a task before adding.")
+           add_task(st.session_state.user["id"], st.session_state.new_task)
+           st.success(f"Task '{st.session_state.new_task}' added!")
+           st.session_state.new_task = ""  # ✅ Clears input box after adding
+           st.rerun()
+        else:
+           st.warning("Please enter a task before adding.")
         
     st.divider()
 
