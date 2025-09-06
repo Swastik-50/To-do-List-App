@@ -143,7 +143,7 @@ else:
         if new_task.strip() != "":
             add_task(st.session_state.user["id"], new_task)
             st.success(f"Task '{new_task}' added!")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.warning("Please enter a task before adding.")
 
@@ -168,7 +168,7 @@ else:
             # Delete button
             if cols[2].button("🗑️ Delete", key=f"delete_{task_id}"):
                 delete_task(task_id)
-                st.experimental_rerun()
+                st.rerun()
     else:
         st.info("No tasks yet. Add one above!")
 
@@ -177,4 +177,4 @@ else:
         if st.button("🧹 Clear All"):
             clear_tasks(st.session_state.user["id"])
             st.success("All tasks cleared!")
-            st.experimental_rerun()
+            st.rerun()
